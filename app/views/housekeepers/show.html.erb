@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @housekeeper %>
+
+<div>
+  <%= link_to "Edit this housekeeper", edit_housekeeper_path(@housekeeper) %> |
+  <%= link_to "Back to housekeepers", housekeepers_path %>
+
+  <%= button_to "Destroy this housekeeper", @housekeeper, method: :delete %>
+</div>

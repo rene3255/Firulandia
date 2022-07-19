@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :housekeepers
+  resources :bookings
   get 'home/index'
   get 'home/about'
   devise_for :users

@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_19_014153) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_19_023954) do
+  create_table "bookings", force: :cascade do |t|
+    t.string "full_name", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.boolean "confirmed", default: false
+    t.integer "price", null: false
+    t.text "pet_description", null: false
+    t.text "review"
+    t.integer "user_id", null: false
+    t.integer "housekeeper_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["housekeeper_id"], name: "index_bookings_on_housekeeper_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "housekeepers", force: :cascade do |t|
+    t.string "full_name", null: false
+    t.string "address", null: false
+    t.text "description", null: false
+    t.text "conditions", null: false
+    t.integer "price", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_housekeepers_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "full_name", null: false
     t.string "country", null: false
@@ -27,4 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_014153) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "housekeepers"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "housekeepers", "users"
 end
