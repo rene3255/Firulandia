@@ -80,3 +80,4 @@ gem "devise", "~> 4.8"
 group :development do
   gem 'annotate'
 end
+gem "bootstrap", "~> 5.2"
