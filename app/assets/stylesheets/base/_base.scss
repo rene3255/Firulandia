@@ -1,0 +1,70 @@
+
+
+
+:root {
+    --primary-color: #0076c6;
+    --yellow-color: #FFF7AE;
+    --orange-color: #F6D167;
+    --green-color: #297F87;
+    --red-color: #DF2E2E;
+    --white-color: #fff;
+    --cream-color: #F8E2CF; 
+    --blur: 10px;
+    --menu-padding: 0.7rem;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+body {
+
+   font-family: 'Poppins', sans-serif;
+   
+   
+}
+
+.layout {
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+   
+    
+}
+
+/*
+display: grid;
+   grid-gap: var(--menu-padding);
+   grid-template-columns: 3rem 1fr 3rem;
+   grid-template-rows: 40px 3rem 1fr 90px 90px 80px 98px;
+   grid-gap: 0.5rem;
+   background-color: var(--yellow-color);
+   grid-template-areas: "logo menus burger"
+                        "news news news"
+                        "appimage appimage appimage"
+                        "coremessage coremessage coremessage"
+                        "conocermas conocermas conocermas"
+                        "badges badges badges"
+                        "footer footer footer"
+  
+   
+  }
+  
+   AREAS DEFINITION 
+  
+  .logo {
+    grid-area: logo;
+  }
+  
+  .menus {
+    grid-area: menus;
+  }
+  
+  .burger {
+    grid-area: burger;
+  }
+  
+  .news {
+    grid-area: news;
+*/

@@ -23,4 +23,8 @@
 class Housekeeper < ApplicationRecord
   belongs_to :user
   has_many :bookings
+
+  def self.has_users
+    joins(:bookings)
+  end
 end

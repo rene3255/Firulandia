@@ -7,27 +7,40 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-
+    <%= javascript_importmap_tags  %>
+    <%= javascript_importmap_tags  %>
     
-    <%= render 'shared/home_navbar' %>
+   
   </head>
 
   <body>
-    <% if notice %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Firulais say!</strong> error_messages.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <% end %>
-    <% if alert %>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Firulais is worried!</strong> <%= alert %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+     <section class="layout">
+      <header class="p-4">
+        <%= render 'shared/navbar' %>
+      </header>
+     
+      <div class="main"> 
+          <div class="row">
+            <div class="col">
+              <% if notice %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>Firulais say!</strong> <%= notice %>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+             <% end %>
+             <% if alert %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Firulais is worried!</strong> <%= alert %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>             
+             <% end %>
 
-      <p class="alert alert-danger"></p>
-    <% end %>
-    <%= yield %>
-  </body>
+            <%= yield %>
+          </div>
+        </div>
+    </div>
+      <!-- Footer area -->
+      <%= render 'shared/footer' %> 
+      
+   </body>
 </html>

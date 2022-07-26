@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+  10.times do |item|
+    Housekeeper.create(
+        full_name: "name_#{item}",
+        address: "Prometeo #{item}",
+        description: "Description #{item}",
+        conditions: "Only small dogs #{item}",
+        price: item * 2,
+        user_id: 1
+        )
+end
